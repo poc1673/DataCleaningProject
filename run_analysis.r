@@ -75,7 +75,7 @@ test.partic <- read.table("test/subject_test.txt",sep = "")
 subjects <-rbind(test.partic,train.partic)
 final.frame <- cbind(subjects,combined_w_activities)
 # Give more suitable names to the first few rows:
-final.frame<-rename(final.frame,c("V1" ="Subject", "activity.labels"="Activity") )
+names(final.frame)[1:2]<-c("Subject","Activity")
 
 # [5]  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 # What I want to do is create a new data frame which includes information for each of the participants broken into each type of activity they pursued. 
@@ -92,6 +92,4 @@ tidy.melted <- melt(final.frame,id.vars = c("Subject","Activity"))
 tidy.data1<- dcast(tidy.melted,Subject+Activity~variable,mean)
 
 # Write the data to a csv file.  Opening the file below in Excel show that the data meets the requirements of tidy data which are:
-
-write.csv(x = tidy.data1,file = "tidied_data.csv",row.names = FALSE)
-
+write.table(x = tidy.data1,file = "tidied_data.csv",row.names = FALSE,sep=",")
