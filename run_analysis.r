@@ -1,7 +1,8 @@
 
 rm(list=ls())
-library(dplyr)
 library(plyr)
+library(dplyr)
+
 library(reshape2)
 # [1]  Load the data into R from the directories.  For simplicity I extracted the directories to the directory where R is initialized. 
 
@@ -18,7 +19,7 @@ combined <- rbind(test,training)
 
 # Each of the 561 columns represents some measurement related to an activity performed by the participant.  The names of each of the 561 measurements
 # is provided in the file  "features.txt".  These will be read into the program to provide the column names for each activity.
-filename <- "/home/petercaya/Documents/Data Cleaning Class/UCI HAR Dataset/features.txt"    
+filename <- "features.txt"    
 colnames <-as.vector(read.table(file = filename , sep=""))
 colnames <- as.vector(colnames[2])
 
