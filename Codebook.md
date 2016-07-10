@@ -17,7 +17,8 @@ These are identifiers which label the subject that a particular row is relevant 
   
 ## Measurements
 
-The names below correspond to the mean of each measurement type based on the activity and the individual:
+The features which were extracted and formatted in this data set follow the same naming conventions discussed in features_info.txt.  Each column contains the average value for each measurement based on the user and the activity there were pursuing.  The averages concerned the mean and standard deviations for measurements discussed in features_info.txt.
+
 
 tBodyAccmeanX
 
